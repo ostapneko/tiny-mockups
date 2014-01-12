@@ -1,11 +1,13 @@
-import Data.Attoparsec.Char8
-import Data.Monoid
-import Control.Applicative
+import          Control.Applicative
+
+import           Data.Attoparsec.Char8
+import           Data.Monoid
 import qualified Data.ByteString.Char8 as BS
 
-import Mockups.Parsers
+import Mockups.Parsers.Element
 
+main :: IO ()
 main = do
-    content <- BS.readFile "memories.mkp"
+    content <- BS.readFile "example.mkp"
     let parser = many (eltParser 0)
     print $ parseOnly parser (content <> "\n")

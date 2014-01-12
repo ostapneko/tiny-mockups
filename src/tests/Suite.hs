@@ -2,7 +2,8 @@ import Data.Attoparsec.Char8
 import qualified Data.HashMap.Strict as M
 import Test.Hspec
 
-import Mockups.Parsers
+import Mockups.Elements.Element
+import Mockups.Parsers.Element
 
 main :: IO ()
 main = hspec $ do
