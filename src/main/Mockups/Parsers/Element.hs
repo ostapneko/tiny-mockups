@@ -8,7 +8,7 @@ import           Mockups.Elements.Element
 import           Mockups.Parsers.Common
 import           Mockups.Parsers.Img
 import           Mockups.Parsers.Txt
-import           Mockups.Parsers.Vbox
+import           Mockups.Parsers.Box
 
 eltParser :: IndentLevel -> Parser Element
 eltParser lvl = do
@@ -18,7 +18,7 @@ eltParser lvl = do
 containerParser :: IndentLevel -> Parser Element
 containerParser lvl = do
     indentParser lvl
-    containerAttr <- vboxParser
+    containerAttr <- boxParser
     endOfLine
     children <- many $ eltParser (lvl + 1)
     return $ Container containerAttr children

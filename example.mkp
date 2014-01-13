@@ -1,5 +1,6 @@
-vbox [size = 2]
-  vbox
+vbox
+  txt [color = black, content = "blu" ]
+  hbox
     img [ src = "bla" ]
     txt [ color   = blue
         , content = "blu"
